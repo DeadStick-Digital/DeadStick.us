@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090c">
+  <meta name="description" content="Open-source software, frameworks, and services that the DeadStick Digital apps — ClawMelt, BillingBird, and CarrierPigeon — are built on.">
+  <title>Acknowledgements — DeadStick Digital LLC</title>
+  <link rel="icon" type="image/png" href="assets/logo-mark-128.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="DeadStick Digital LLC — home">
+      <span class="brand-lockup">
+        <img class="brand-wordmark" src="assets/logo-wordmark-deadstick-silver.png" alt="DeadStick" width="172" height="22">
+        <span class="brand-sub">Digital <span class="brand-suffix">LLC</span></span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#apps">Apps</a>
+      <a href="index.html#company">Company</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <a class="nav-cta" href="index.html#contact">Contact</a>
+  </div>
+</header>
+
+<main>
+<section class="doc wrap">
+  <div class="doc-head">
+    <div class="eyebrow">Credits</div>
+    <h1>Acknowledgements</h1>
+    <p>Our apps stand on a lot of shoulders. This page names the open-source software, frameworks,
+       and services that DeadStick Digital's apps and website rely on. Each project's own license
+       governs how it may be used; the license texts are reproduced in-app under
+       <em>Settings → About → Licenses</em>. If we've forgotten anyone, please
+       <a href="index.html#contact">let us know</a> and we will correct it.</p>
+    <p class="muted mono" style="margin-top:14px;">Last updated: April 18, 2026</p>
+  </div>
+
+  <div class="doc-body">
+
+    <div class="toc" aria-label="Table of contents">
+      <h4>Contents</h4>
+      <ol>
+        <li><a href="#clawmelt">ClawMelt</a></li>
+        <li><a href="#billingbird">BillingBird</a></li>
+        <li><a href="#carrierpigeon">CarrierPigeon</a></li>
+        <li><a href="#website">Website</a></li>
+        <li><a href="#typography">Typography &amp; type</a></li>
+        <li><a href="#trademarks">Trademarks &amp; service marks</a></li>
+        <li><a href="#contact">Corrections &amp; contact</a></li>
+      </ol>
+    </div>
+
+    <div class="callout">
+      <strong>A note on completeness.</strong> The list below names the major frameworks and
+      libraries used by each app at release. Each app bundles a full license file in-app under
+      <em>Settings → About → Licenses</em> that enumerates every transitive dependency with its
+      SPDX identifier and copyright notice; this page is the human-readable summary.
+    </div>
+
+    <h2 id="clawmelt">1. ClawMelt</h2>
+    <p>ClawMelt is a Flutter-based desktop app with a Python training engine underneath. It owes
+       its existence to the work of the teams and communities behind:</p>
+    <ul>
+      <li><strong><a href="https://flutter.dev">Flutter</a></strong> — cross-platform UI framework,
+          BSD 3-Clause License. © Google LLC.</li>
+      <li><strong><a href="https://www.python.org">Python</a></strong> — the language that powers
+          the training engine, PSF License.</li>
+      <li><strong><a href="https://github.com/ml-explore/mlx">MLX</a></strong> and
+          <strong><a href="https://github.com/ml-explore/mlx-lm">MLX-LM</a></strong> — Apple's
+          array framework and LLM toolkit for Apple Silicon, MIT License. © Apple, Inc.</li>
+      <li><strong><a href="https://huggingface.co">Hugging Face Hub</a></strong> and the
+          <strong><a href="https://github.com/huggingface/transformers">Transformers</a></strong>,
+          <strong><a href="https://github.com/huggingface/datasets">Datasets</a></strong>, and
+          <strong><a href="https://github.com/huggingface/peft">PEFT</a></strong> libraries — for
+          model weights, dataset loading, and the LoRA / QLoRA / DoRA adapter implementations,
+          Apache 2.0 License. © Hugging Face, Inc.</li>
+      <li><strong><a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a></strong> and
+          the <strong>GGUF</strong> file format — MIT License. © Georgi Gerganov and
+          contributors.</li>
+      <li><strong><a href="https://github.com/huggingface/safetensors">safetensors</a></strong> —
+          tensor serialization format, Apache 2.0 License. © Hugging Face, Inc.</li>
+      <li>The prompt-format conventions popularised by the
+          <strong><a href="https://github.com/tatsu-lab/stanford_alpaca">Stanford Alpaca</a></strong>
+          and <strong>ChatML</strong> projects.</li>
+    </ul>
+    <p>The in-app <em>Licenses</em> screen lists the full set of direct and transitive
+       dependencies for both the Flutter front-end and the Python engine.</p>
+
+    <h2 id="billingbird">2. BillingBird</h2>
+    <p>BillingBird is a React Native app with the Expo SDK and New Architecture enabled. The
+       teams behind these projects make it possible for a very small studio to ship a universal
+       iOS and Android product:</p>
+    <ul>
+      <li><strong><a href="https://reactnative.dev">React Native</a></strong> 0.76 (Fabric /
+          TurboModules) — MIT License. © Meta Platforms, Inc. and affiliates.</li>
+      <li><strong><a href="https://expo.dev">Expo</a></strong> SDK 52 and the Expo modules
+          ecosystem — MIT License. © 650 Industries, Inc. and contributors.</li>
+      <li><strong><a href="https://reactjs.org">React</a></strong> — MIT License. © Meta
+          Platforms, Inc. and affiliates.</li>
+      <li>The <strong>Apple iCloud</strong> and <strong>Google Drive</strong> APIs, used to
+          store the optional encrypted sync container in your own cloud account.</li>
+      <li>On-device receipt capture via
+          <strong><a href="https://developer.apple.com/documentation/vision">Apple Vision</a></strong>
+          (iOS) and
+          <strong><a href="https://developers.google.com/ml-kit">Google ML Kit</a></strong>
+          (Android).</li>
+      <li>PDF rendering and export via the system PDF APIs on each platform.</li>
+    </ul>
+
+    <h2 id="carrierpigeon">3. CarrierPigeon</h2>
+    <p>CarrierPigeon's tunnel is built on the WireGuard protocol and its reference
+       implementations. The cryptographic primitives, key exchange, and the two mobile tunnel
+       providers are made possible by:</p>
+    <ul>
+      <li><strong><a href="https://www.wireguard.com">WireGuard</a></strong> — "WireGuard" and
+          the "WireGuard" logo are registered trademarks of Jason A. Donenfeld. The protocol is
+          the foundation of this app.</li>
+      <li><strong><a href="https://git.zx2c4.com/wireguard-go/">wireguard-go</a></strong> — the
+          userspace WireGuard implementation in Go, MIT License. © Jason A. Donenfeld.</li>
+      <li><strong><a href="https://git.zx2c4.com/wireguard-apple/">wireguard-apple</a></strong>
+          and <strong><a href="https://git.zx2c4.com/wireguard-android/">wireguard-android</a></strong>
+          — the Apple-platform and Android reference clients, MIT License. © Jason A.
+          Donenfeld.</li>
+      <li>Apple's <strong>Network Extension framework</strong>
+          (<code>NEPacketTunnelProvider</code>) and Android's <strong><code>VpnService</code></strong>
+          API — the platform primitives without which none of this would be possible.</li>
+    </ul>
+    <p>CarrierPigeon is an independent product and is not endorsed by, affiliated with, or
+       sponsored by the WireGuard project or Mr Donenfeld.</p>
+
+    <h2 id="website">4. Website</h2>
+    <p><a href="https://www.deadstick.net">www.deadstick.net</a> is a hand-written static site
+       served from GitHub Pages. It relies on:</p>
+    <ul>
+      <li><strong><a href="https://pages.github.com">GitHub Pages</a></strong> for hosting, served
+          through <strong><a href="https://www.cloudflare.com">Cloudflare</a></strong> for TLS and
+          edge caching.</li>
+      <li><strong><a href="https://web3forms.com">Web3Forms</a></strong> — delivers submissions
+          from the contact form to our inbox. Processing is covered by
+          <a href="privacy.html#share">Section 5</a> of our privacy policy.</li>
+      <li><strong><a href="https://www.hcaptcha.com">hCaptcha</a></strong> — bot protection on the
+          contact form. © Intuition Machines, Inc.</li>
+    </ul>
+
+    <h2 id="typography">5. Typography &amp; type</h2>
+    <p>The system font stack (SF Pro on Apple platforms, Segoe UI Variable on Windows, Roboto on
+       Android) is used throughout, with no custom webfonts loaded from third parties. This keeps
+       our pages fast and keeps your browser from making extra requests you did not ask for.</p>
+
+    <h2 id="trademarks">6. Trademarks &amp; service marks</h2>
+    <p>Apple, the Apple logo, iPhone, iPad, Mac, macOS, and Apple Silicon are trademarks of
+       Apple Inc., registered in the U.S. and other countries and regions. App Store is a service
+       mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.
+       Android is a trademark of Google LLC. WireGuard is a registered trademark of Jason A.
+       Donenfeld. All other product and company names mentioned on this page may be trademarks of
+       their respective owners; their use here is purely for identification and does not imply
+       endorsement.</p>
+
+    <h2 id="contact">7. Corrections &amp; contact</h2>
+    <p>If a project has been misattributed, a license identifier is wrong, or a dependency has
+       been left out, please send a note through the
+       <a href="index.html#contact">contact form</a> (topic: <em>Something else</em>) and we will
+       correct this page in the next deployment. If you are a rights-holder and wish to be named
+       differently — or not at all — we will honour that.</p>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-bottom" style="border:0; padding:0;">
+      <div>© 2026 DeadStick Digital LLC · All rights reserved.</div>
+      <div><a href="index.html">← Back to home</a></div>
+    </div>
+    <div class="footer-bottom" style="border:0; padding-top:12px;">
+      <div class="legal-note">
+        Apple, the Apple logo, iPhone, iPad, Mac, macOS, and Apple Silicon are trademarks of
+        Apple Inc., registered in the U.S. and other countries and regions. App Store is a
+        service mark of Apple Inc. Google Play and the Google Play logo are trademarks of
+        Google LLC. Android is a trademark of Google LLC.
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

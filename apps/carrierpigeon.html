@@ -13,9 +13,11 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a class="brand" href="../index.html">
-      <img class="brand-mark" src="../assets/logo-mark-128.png" alt="" aria-hidden="true">
-      <span class="brand-name"><img class="brand-wordmark" src="../assets/logo-wordmark-deadstick-silver.png" alt="DeadStick"> Digital <span class="brand-suffix">LLC</span></span>
+    <a class="brand" href="../index.html" aria-label="DeadStick Digital LLC — home">
+      <span class="brand-lockup">
+        <img class="brand-wordmark" src="../assets/logo-wordmark-deadstick-silver.png" alt="DeadStick" width="172" height="22">
+        <span class="brand-sub">Digital <span class="brand-suffix">LLC</span></span>
+      </span>
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="../index.html#apps">Apps</a>
@@ -78,6 +80,19 @@
          fully under your control, which is why it's your responsibility to use it in line with
          your carrier's terms of service.</p>
 
+      <h3>VPN scope and disclosures</h3>
+      <p>CarrierPigeon uses Android's <code>VpnService</code> API and iOS's
+         <code>NEPacketTunnelProvider</code> API for a single purpose: to route the desktop
+         companion's outbound traffic through the paired phone's own networking stack. We do not
+         inspect, log, collect, share, or transmit the contents, destinations, or metadata of any
+         traffic that flows through the tunnel. The tunnel carries only the user's own traffic
+         between two devices that the same user controls, and the app does not modify traffic from
+         other apps on the phone.</p>
+      <p>As required by Apple's App Store Review Guideline 5.4 and Google Play's VPN policy,
+         DeadStick Digital LLC does not sell, use, or disclose to third parties any data collected
+         by CarrierPigeon for any purpose. The first time the tunnel activates, the app surfaces a
+         prominent disclosure describing exactly what the tunnel does.</p>
+
       <h3>How your data is handled</h3>
       <p>CarrierPigeon never sees the contents, destinations, or metadata of your traffic — that
          traffic flows directly between your two devices and then out of your phone's own
@@ -119,7 +134,8 @@
       <div class="legal-note">
         Apple, the Apple logo, iPhone, iPad, Mac, macOS, and Apple Silicon are trademarks of
         Apple Inc., registered in the U.S. and other countries and regions. App Store is a
-        service mark of Apple Inc.
+        service mark of Apple Inc. Google Play and the Google Play logo are trademarks of
+        Google LLC. Android is a trademark of Google LLC.
       </div>
     </div>
   </div>

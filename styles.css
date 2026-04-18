@@ -176,34 +176,35 @@ section {
   gap: 24px;
 }
 
+/* Brand lockup: DEADSTICK wordmark over "Digital LLC" — no separate icon. */
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-/* Brand mark — the DeadStick Digital squircle logo, rendered as an <img> */
-.brand-mark {
-  width: 40px;
-  height: 40px;
-  display: block;
-  flex-shrink: 0;
-  object-fit: contain;
-  /* keep the img crisp on HiDPI and preserve its alpha against any bg */
-}
-.brand-name {
-  font-size: 15px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  text-decoration: none;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  font-weight: 600;
 }
-/* The DEADSTICK wordmark — replaces the plain-text "DeadStick" in the brand. */
+.brand-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  line-height: 1;
+}
 .brand-wordmark {
-  height: 18px;
+  height: 22px;
   width: auto;
+  max-width: none;       /* defeat the global img { max-width: 100% } */
   display: block;
-  object-fit: contain;
+}
+.brand-sub {
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding-left: 1px;     /* optical alignment with wordmark left edge */
 }
 .brand-suffix { color: var(--text-soft); font-weight: 400; }
 

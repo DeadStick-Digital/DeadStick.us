@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090c">
+  <meta name="description" content="How to delete your data from DeadStick Digital LLC apps: ClawMelt, BillingBird, and CarrierPigeon.">
+  <title>Account &amp; data deletion — DeadStick Digital LLC</title>
+  <link rel="icon" type="image/png" href="assets/logo-mark-128.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="DeadStick Digital LLC — home">
+      <span class="brand-lockup">
+        <img class="brand-wordmark" src="assets/logo-wordmark-deadstick-silver.png" alt="DeadStick" width="172" height="22">
+        <span class="brand-sub">Digital <span class="brand-suffix">LLC</span></span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#apps">Apps</a>
+      <a href="index.html#company">Company</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <a class="nav-cta" href="index.html#contact">Contact</a>
+  </div>
+</header>
+
+<main>
+<section class="doc wrap">
+  <div class="doc-head">
+    <div class="eyebrow">Your data</div>
+    <h1>Account &amp; data deletion</h1>
+    <p>DeadStick Digital does not operate user accounts. There is nothing stored on our servers to
+       delete — the only copies of your data live on your own devices and, if you opted in, in
+       your own cloud account. This page explains how to remove each copy.</p>
+  </div>
+
+  <div class="doc-body">
+
+    <div class="callout">
+      <strong>Short version:</strong> uninstall the app to wipe its local database. If you turned on
+      iCloud or Google Drive sync, delete the app's container/folder in that service to remove the
+      remote copy. We never receive either copy. No message to us is required.
+    </div>
+
+    <h2 id="clawmelt">ClawMelt</h2>
+    <p>ClawMelt stores every dataset, checkpoint, adapter, and log file in a local project folder on
+       your Mac. Nothing is uploaded to DeadStick Digital or to any third party during training.</p>
+    <ul>
+      <li><strong>Remove a single project.</strong> In ClawMelt, right-click the project in the
+          sidebar and choose <em>Delete</em>, or delete the project folder directly in Finder.</li>
+      <li><strong>Remove everything.</strong> Drag <em>ClawMelt.app</em> to the Trash, then delete
+          <code>~/Library/Application Support/ClawMelt/</code> and
+          <code>~/Library/Caches/com.deadstick.clawmelt/</code>. That removes preferences, the
+          model catalog cache, and any local training logs.</li>
+      <li><strong>Hugging Face-side data.</strong> Models or datasets you downloaded from Hugging
+          Face live on your machine only. They are not mirrored anywhere by DeadStick Digital.</li>
+    </ul>
+
+    <h2 id="billingbird">BillingBird</h2>
+    <p>BillingBird stores clients, invoices, receipts, and attachments in an on-device database.
+       Sync, if enabled, writes an encrypted container to your own iCloud or Google Drive account.
+       DeadStick Digital cannot read either copy.</p>
+    <ul>
+      <li><strong>On-device.</strong> Uninstalling BillingBird from your phone removes the local
+          database. iOS: long-press the app → <em>Remove App</em> → <em>Delete App</em>. Android:
+          long-press → <em>App info</em> → <em>Uninstall</em>.</li>
+      <li><strong>iCloud sync copy.</strong> Open <em>Settings</em> → <em>Apple ID</em> →
+          <em>iCloud</em> → <em>Manage Account Storage</em> → <em>BillingBird</em> → <em>Delete
+          Data</em>. This removes the encrypted BillingBird container from your iCloud.</li>
+      <li><strong>Google Drive sync copy.</strong> Open <a href="https://drive.google.com">drive.google.com</a>
+          → <em>Settings (gear)</em> → <em>Manage apps</em> → find <em>BillingBird</em> →
+          <em>Options</em> → <em>Delete hidden app data</em>.</li>
+      <li><strong>Export first, if you want.</strong> Before deleting, you can export your full
+          records as a <code>.billingbird</code> archive from <em>Settings → Export</em>.</li>
+    </ul>
+
+    <h2 id="carrierpigeon">CarrierPigeon</h2>
+    <p>CarrierPigeon does not store your traffic, destinations, or metadata anywhere — not on your
+       devices, not on ours. The only local state is pairing configuration: WireGuard keys and the
+       identifier of the phone you paired with.</p>
+    <ul>
+      <li><strong>Clear pairing.</strong> Open the desktop or phone companion →
+          <em>Settings</em> → <em>Clear pairing</em>. This deletes the WireGuard keypair and paired
+          device identifier from the system keychain on both devices.</li>
+      <li><strong>Remove the apps.</strong> Uninstalling CarrierPigeon from either device wipes all
+          keychain entries associated with that install.</li>
+    </ul>
+
+    <h2 id="on-the-web">Our website</h2>
+    <p>This site serves only static pages and does not create cookies, analytics profiles, or
+       accounts. When you submit the contact form on the homepage, your name, email, selected topic,
+       and message are delivered to us over TLS via our form provider (<a href="https://web3forms.com">Web3Forms</a>),
+       stored briefly for transit, and then read only by a person at DeadStick Digital.
+       To delete your message from our inbox after we have replied, send us a note asking us to do
+       so and we will remove the thread.</p>
+
+    <h2 id="requests">Where to send a deletion request</h2>
+    <p>If you cannot complete one of the steps above, or you would like written confirmation that no
+       copy of your data remains with us, send a note through the
+       <a href="index.html#contact">contact form</a> with the topic <em>Privacy request</em>. We
+       will acknowledge within one business day and respond in writing. Because we hold no user
+       data at rest, most requests are answered with a short explanation and a pointer to the
+       steps above.</p>
+
+    <h2 id="addr">Written requests</h2>
+    <p>
+      <strong>DeadStick Digital LLC</strong><br>
+      c/o Republic Registered Agent LLC<br>5830 E 2nd St, Ste 7000<br>
+      Casper, WY 82609, USA
+    </p>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-bottom" style="border:0; padding:0;">
+      <div>© 2026 DeadStick Digital LLC · All rights reserved.</div>
+      <div><a href="index.html">← Back to home</a></div>
+    </div>
+    <div class="footer-bottom" style="border:0; padding-top:12px;">
+      <div class="legal-note">
+        Apple, the Apple logo, iPhone, iPad, Mac, macOS, and Apple Silicon are trademarks of
+        Apple Inc., registered in the U.S. and other countries and regions. App Store is a
+        service mark of Apple Inc. Google Play and the Google Play logo are trademarks of
+        Google LLC.
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
