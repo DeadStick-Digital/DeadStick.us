@@ -179,20 +179,32 @@ section {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
 /* Brand mark — the DeadStick Digital squircle logo, rendered as an <img> */
 .brand-mark {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   display: block;
   flex-shrink: 0;
   object-fit: contain;
   /* keep the img crisp on HiDPI and preserve its alpha against any bg */
 }
-.brand-name { font-size: 15px; }
+.brand-name {
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+/* The DEADSTICK wordmark — replaces the plain-text "DeadStick" in the brand. */
+.brand-wordmark {
+  height: 18px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
 .brand-suffix { color: var(--text-soft); font-weight: 400; }
 
 .nav-links {
