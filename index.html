@@ -28,7 +28,7 @@
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
     </nav>
-    <a class="nav-cta" href="support.html">Contact</a>
+    <a class="nav-cta" href="#contact">Contact</a>
   </div>
 </header>
 
@@ -121,8 +121,8 @@
         <h3>CarrierPigeon</h3>
         <p class="app-desc">
           A modern successor to paired-phone tethering. CarrierPigeon lets your desktop route
-          through your phone in a way that is fast, battery-efficient, and indistinguishable from
-          native on-device traffic — powered by WireGuard.
+          through your phone over an efficient WireGuard tunnel — no double-NAT, no extra
+          battery drain, and fully under your control.
         </p>
         <ul class="app-features">
           <li>Desktop companions for macOS and Windows</li>
@@ -172,32 +172,81 @@
   </div>
 </section>
 
-<!-- =========================== CTA =========================== -->
+<!-- =========================== CONTACT =========================== -->
 <section id="contact">
   <div class="wrap">
-    <div class="cta-panel">
-      <div>
-        <div class="eyebrow" style="margin-bottom:16px">Talk to us</div>
-        <h2>Questions, bug reports, or press — we read every email.</h2>
-        <p>DeadStick Digital is a small team. The fastest way to reach us is directly at the
-           address on the right. We aim to reply within one business day.</p>
-      </div>
-      <div class="cta-meta">
+    <div class="cta-panel cta-panel-form">
+      <div class="cta-intro">
         <div>
-          <span class="label">Email</span>
-          <a href="mailto:contact@deadstick.us">contact@deadstick.us</a>
+          <div class="eyebrow" style="margin-bottom:16px">Message us</div>
+          <h2>Questions, bug reports, or press — we read every message.</h2>
+          <p>DeadStick Digital is a small team. Send a note below and we'll write back,
+             usually within one business day.</p>
         </div>
-        <div>
-          <span class="label">Web</span>
-          <a href="https://www.deadstick.us">www.deadstick.us</a>
-        </div>
-        <div>
-          <span class="label">Mailing address</span>
-          DeadStick Digital LLC<br>
-          c/o Republic Registered Agent LLC<br>5830 E 2nd St, Ste 7000<br>
-          Casper, WY 82609
+        <div class="cta-meta">
+          <div>
+            <span class="label">Web</span>
+            <a href="https://www.deadstick.net">www.deadstick.net</a>
+          </div>
+          <div>
+            <span class="label">Mailing address</span>
+            DeadStick Digital LLC<br>
+            c/o Republic Registered Agent LLC<br>5830 E 2nd St, Ste 7000<br>
+            Casper, WY 82609
+          </div>
         </div>
       </div>
+
+      <form class="contact-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            novalidate>
+        <!-- Web3Forms access key (issued for contact@deadstick.net). -->
+        <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="from_name" value="deadstick.net contact form">
+        <!-- Honeypot: real users never see or check this. -->
+        <input type="checkbox" name="botcheck" class="cf-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="cf-row">
+          <label class="cf-field">
+            <span>Name</span>
+            <input type="text" name="name" autocomplete="name" placeholder="Your name">
+          </label>
+          <label class="cf-field">
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required placeholder="you@example.com">
+          </label>
+        </div>
+
+        <label class="cf-field">
+          <span>Topic</span>
+          <select name="subject" required>
+            <option value="" disabled selected>Pick one</option>
+            <option>General question</option>
+            <option>Bug report</option>
+            <option>Press &amp; media</option>
+            <option>Privacy request</option>
+            <option>Something else</option>
+          </select>
+        </label>
+
+        <label class="cf-field">
+          <span>Message</span>
+          <textarea name="message" rows="5" required placeholder="What's on your mind?"></textarea>
+        </label>
+
+        <!-- hCaptcha, rendered and verified server-side by Web3Forms. -->
+        <div class="h-captcha" data-captcha="true"></div>
+
+        <button type="submit" class="btn btn-primary cf-submit">
+          Send message <span class="btn-arrow">→</span>
+        </button>
+
+        <div class="cf-status" role="status" aria-live="polite"></div>
+        <p class="cf-note">
+          We only use what you send here to write back. No newsletters, no tracking.
+        </p>
+      </form>
     </div>
   </div>
 </section>
@@ -230,7 +279,7 @@
         <ul>
           <li><a href="#company">About</a></li>
           <li><a href="support.html">Support</a></li>
-          <li><a href="mailto:contact@deadstick.us">Contact</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
 
@@ -247,12 +296,17 @@
     <div class="footer-bottom">
       <div>© 2026 DeadStick Digital LLC · All rights reserved.</div>
       <div class="legal-note">
-        Apple, the Apple logo, iPhone, iPad, Mac, and macOS are trademarks of Apple Inc.,
-        registered in the U.S. and other countries. App Store is a service mark of Apple Inc.
+        Apple, the Apple logo, iPhone, iPad, Mac, macOS, and Apple Silicon are trademarks of
+        Apple Inc., registered in the U.S. and other countries and regions. App Store is a
+        service mark of Apple Inc.
       </div>
     </div>
   </div>
 </footer>
+
+<!-- Web3Forms client — handles submission, hCaptcha, and status messages.
+     Populates the nearest .cf-status element with success / error text. -->
+<script src="https://web3forms.com/client/script.js" async defer></script>
 
 </body>
 </html>

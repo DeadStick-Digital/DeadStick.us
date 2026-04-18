@@ -24,7 +24,7 @@
       <a href="../privacy.html">Privacy</a>
       <a href="../terms.html">Terms</a>
     </nav>
-    <a class="nav-cta" href="mailto:contact@deadstick.us">Contact</a>
+    <a class="nav-cta" href="../index.html#contact">Contact</a>
   </div>
 </header>
 
@@ -36,11 +36,10 @@
     <div class="eyebrow" style="color:var(--pigeon);">For mobile-first networks</div>
     <h1>CarrierPigeon</h1>
     <p>A modern successor to paired-phone tethering. CarrierPigeon lets your desktop (macOS or
-       Windows) route through your paired phone (iOS or Android) in a way that is fast,
-       battery-efficient, and indistinguishable from native on-device traffic — powered
-       end-to-end by WireGuard.</p>
+       Windows) route through your paired phone (iOS or Android) over an efficient WireGuard
+       tunnel — no double-NAT, no extra battery drain, and fully under your control.</p>
     <div class="hero-actions" style="margin-top:28px;">
-      <a class="btn btn-primary" href="mailto:contact@deadstick.us?subject=CarrierPigeon">Contact support <span class="btn-arrow">→</span></a>
+      <a class="btn btn-primary" href="../index.html#contact">Contact support <span class="btn-arrow">→</span></a>
       <a class="btn" href="#overview">Learn more</a>
     </div>
   </div>
@@ -54,30 +53,30 @@
       <p>CarrierPigeon is a two-part app: a desktop companion that runs on your Mac or Windows PC,
          and a phone companion that runs on your paired iPhone or Android device. Together they
          open a WireGuard tunnel between the two devices — over Personal Hotspot Wi-Fi, USB tether,
-         or Bluetooth PAN — and re-emit your desktop's traffic out of the phone's native
+         or Bluetooth PAN — and hand your desktop's traffic off through the phone's native
          networking stack.</p>
-      <p>The result is a tether that behaves, from the carrier's perspective, like traffic
-         originating on the phone itself: correct TTL, no hotspot fingerprint, aggressive DNS
-         leak protection, and screen-off battery efficiency.</p>
+      <p>The result is a lean, efficient connection between devices you already own: low latency,
+         aggressive DNS leak protection, and screen-off battery efficiency — without the
+         double-NAT baggage of legacy tethering software.</p>
 
       <h3>How it works</h3>
       <ul>
         <li>On iOS, the companion terminates a WireGuard server inside an
-            <code>NEPacketTunnelProvider</code>, then forwards flows back out over cellular. On
-            Android, the equivalent is a <code>VpnService</code> bound to a foreground service.</li>
-        <li>The desktop companion (macOS or Windows) configures the local WireGuard client, sets
-            TTL to 65 (so the phone's +1-hop decrement lands at the native-looking 64), and locks
-            DNS to a safe resolver to prevent leaks.</li>
-        <li>On iOS, flows are re-originated at Layer 4 so each desktop connection leaves the
-            phone as a brand-new socket with no tether fingerprint.</li>
+            <code>NEPacketTunnelProvider</code>, then forwards flows out through the phone's
+            normal networking path. On Android, the equivalent is a <code>VpnService</code> bound
+            to a foreground service.</li>
+        <li>The desktop companion (macOS or Windows) configures the local WireGuard client and
+            locks DNS to a safe resolver to prevent leaks.</li>
+        <li>Flows are re-originated at Layer 4 on the phone so each desktop connection travels as
+            a fresh socket with clean routing — keeping things responsive and predictable.</li>
       </ul>
 
       <h3>What CarrierPigeon is <em>not</em></h3>
       <p>CarrierPigeon is not a commercial VPN service. We do not operate exit nodes, do not
          terminate your traffic on DeadStick-owned servers, and do not anonymize you on the public
-         internet. Your exit point is your own phone on your own cellular plan. You remain fully
-         responsible for how you use the connection and for complying with your carrier's terms
-         of service.</p>
+         internet. Your exit point is your own phone on your own cellular plan. CarrierPigeon is
+         fully under your control, which is why it's your responsibility to use it in line with
+         your carrier's terms of service.</p>
 
       <h3>How your data is handled</h3>
       <p>CarrierPigeon never sees the contents, destinations, or metadata of your traffic — that
@@ -101,7 +100,7 @@
         <dt>Account</dt>      <dd>None required</dd>
         <dt>Age rating</dt>   <dd>4+</dd>
       </dl>
-      <a class="btn btn-primary" href="mailto:contact@deadstick.us?subject=CarrierPigeon">Email support</a>
+      <a class="btn btn-primary" href="../index.html#contact">Contact support</a>
       <a class="btn" href="../privacy.html#apps" style="margin-top:10px;">Privacy details</a>
     </aside>
 
@@ -115,6 +114,13 @@
     <div class="footer-bottom" style="border:0; padding:0;">
       <div>© 2026 DeadStick Digital LLC · All rights reserved.</div>
       <div><a href="../index.html">← Back to home</a></div>
+    </div>
+    <div class="footer-bottom" style="border:0; padding-top:12px;">
+      <div class="legal-note">
+        Apple, the Apple logo, iPhone, iPad, Mac, macOS, and Apple Silicon are trademarks of
+        Apple Inc., registered in the U.S. and other countries and regions. App Store is a
+        service mark of Apple Inc.
+      </div>
     </div>
   </div>
 </footer>
